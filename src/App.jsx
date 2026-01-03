@@ -1,12 +1,12 @@
-import Basic from "./components/Basic"
-import Basics from "./components/Basics"
+
+import YoutubeForm from "./components/YoutubeForm"
 
 function App() {
 
 
   return (
     <div className="from-section">
-      <Basics/>
+      <YoutubeForm/>
     </div>
   )
 }

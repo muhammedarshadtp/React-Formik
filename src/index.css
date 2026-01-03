@@ -1,95 +1,77 @@
-/* Page container */
-.from-section {
-  background: #0f172a;
-  min-height: 100vh;
+/* Reset & base styles */
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  margin: 0;
+  padding: 0;
+}
+
+/* Container */
+div {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
 }
 
-/* Card */
-.formik {
-  background: #020617;
-  width: 360px;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-}
-
-/* Heading */
-.h1 {
-  color: #f87171;
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 24px;
-}
-
-/* Form */
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-/* Input group */
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+/* Form card */
+form {
+  background-color: #ffffff;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Labels */
 label {
-  color: #e5e7eb;
-  font-size: 14px;
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #333;
 }
 
 /* Inputs */
 input {
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid #334155;
-  background: #020617;
-  color: #fff;
-  font-size: 14px;
-  outline: none;
-  transition: border 0.2s, box-shadow 0.2s;
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  margin-bottom: 1.2rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 input:focus {
-  border-color: #38bdf8;
-  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.3);
-}
-
-/* Error text */
-.error {
-  color: #f87171;
-  font-size: 12px;
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
 }
 
 /* Button */
 button {
-  margin-top: 10px;
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
-  background: #38bdf8;
-  color: #020617;
-  font-size: 15px;
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #667eea;
+  color: white;
+  font-size: 1rem;
   font-weight: 600;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
-  background: #0ea5e9;
+  background-color: #5a67d8;
+  transform: translateY(-1px);
 }
 
 button:active {
-  transform: scale(0.98);
-}
-
-button:disabled {
-  background: #475569;
-  cursor: not-allowed;
+  transform: translateY(0);
 }
