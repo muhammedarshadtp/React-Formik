@@ -10,8 +10,8 @@ body {
   padding: 0;
 }
 
-/* Container */
-div {
+/* Page container */
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,11 +40,9 @@ label {
 input {
   width: 100%;
   padding: 0.6rem 0.7rem;
-  margin-bottom: 1.2rem;
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 0.95rem;
-  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 input:focus {
@@ -64,14 +62,20 @@ button {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
   background-color: #5a67d8;
-  transform: translateY(-1px);
 }
 
-button:active {
-  transform: translateY(0);
+/* Form control */
+.form-control {
+  margin-bottom: 1.2rem;
+}
+
+/* Error text */
+.error {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
 }
