@@ -5,6 +5,8 @@ const initialValues = {
   name: "",
   email: "",
   channel: "",
+  address:"",
+  comments:"",
 };
 
 const validationSchema = yup.object({
@@ -30,34 +32,62 @@ const onSubmit = (values) => {
 
 const YoutubeForm = () => {
   return (
-    <Formik
-      className="container"
-      initialValues={initialValues}
-      validationSchema={validationSchema}
-      onSubmit={onSubmit}
-    >
-      <Form>
-        <div className="form-control">
-          <label htmlFor="name">Name</label>
-          <Field type="text" id="name" name="name" />
-          <ErrorMessage name="name" />
-        </div>
+   <div className="container">
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={onSubmit}
+      >
+        <Form className="form">
+          <h2 className="form-title">YouTube Form</h2>
 
-        <div className="form-control">
-          <label htmlFor="email">E-mail</label>
-          <Field type="email" id="email" name="email" />
-          <ErrorMessage name="email" />
-        </div>
+          <div className="form-control">
+            <label htmlFor="name">Name</label>
+            <Field type="text" id="name" name="name" />
+            <ErrorMessage name="name" component="p" className="error" />
+          </div>
 
-        <div className="form-control">
-          <label htmlFor="channel">Channel</label>
-          <Field type="text" id="channel" name="channel" />
-          <ErrorMessage name="channel" />
-        </div>
+          <div className="form-control">
+            <label htmlFor="email">E-mail</label>
+            <Field type="email" id="email" name="email" />
+            <ErrorMessage name="email" component="p" className="error" />
+          </div>
 
-        <button type="submit">Submit</button>
-      </Form>
-    </Formik>
+          <div className="form-control">
+            <label htmlFor="channel">Channel</label>
+            <Field type="text" id="channel" name="channel" />
+            <ErrorMessage name="channel" component="p" className="error" />
+          </div>
+
+          <div className="form-control">
+            <label htmlFor="comments">Comments</label>
+            <Field as="textarea" id="comments" name="comments" />
+          </div>
+          <div className="form-control">
+            <label htmlFor="address">Address</label>
+            <Field name="address">
+                {
+                    props=>{
+                        const {Field,meta}=props
+                        return(
+                            <div>
+                                <input type="text" id="address" {...Field} />
+                                {meta.touched && meta.error ? <div>{meta.error}</div>:null}
+                            </div>
+                        )
+
+                    }}
+
+
+
+            </Field>
+
+          </div>
+
+          <button type="submit">Submit</button>
+        </Form>
+      </Formik>
+    </div>
   );
 };
 
